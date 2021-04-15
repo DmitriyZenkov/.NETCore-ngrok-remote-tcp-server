@@ -24,7 +24,8 @@ namespace TCPServerApp
             listener.Start();
 
             var endPoint = (IPEndPoint)listener.LocalEndpoint;
-            TCPPort = endPoint.Port.ToString();
+            //TCPPort = endPoint.Port.ToString();
+            TCPPort = "6001";
 
             Console.WriteLine("TCP server started and listening on {0}", TCPPort);
         }
