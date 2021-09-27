@@ -16,7 +16,7 @@ namespace TCPServerApp
             quit
         }
 
-        public string TCPPort { get; set; }
+        //public string TCPPort { get; set; }
         
         public ServerListener() {
 
@@ -25,9 +25,9 @@ namespace TCPServerApp
 
             var endPoint = (IPEndPoint)listener.LocalEndpoint;
             //TCPPort = endPoint.Port.ToString();
-            TCPPort = "6001";
+            //TCPPort = "1204";
 
-            Console.WriteLine("TCP server started and listening on {0}", TCPPort);
+            Console.WriteLine("TCP server started and listening on {0}", Program.Port);
         }
 
         public async Task StartListening()

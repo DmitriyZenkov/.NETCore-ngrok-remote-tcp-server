@@ -6,12 +6,16 @@ namespace TCPServerApp
 {
     class Program
     {
+        public static string Port;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to TCP Remote Server");
 
             if (args.Length < 2) Exit();
             else if (!args[0].ToLower().Equals("--authtoken") || string.IsNullOrEmpty(args[1])) Exit();
+
+            Port = args[2];
 
             string ngrok_auth_token = args[1].Trim();
 
@@ -23,7 +27,7 @@ namespace TCPServerApp
 
             Ngrok ngrok = new Ngrok();
             ngrok.AuthToken = ngrok_auth_token;
-            ngrok.Start(server.TCPPort); //ngrok has created a tcp tunnel to local interface 
+            ngrok.Start(Program.Port); //ngrok has created a tcp tunnel to local interface 
 
             //ngrok process is a blocking thread so its async. Delay for 2 secs to complete propagation
             Thread.Sleep(2000);

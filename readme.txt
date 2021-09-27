@@ -1,0 +1,1 @@
+dotnet run --authtoken "1rC0qVb9qIhhi9XUEXWnl7nckA5_5bRkqP4vEZiW7zgmwLtmY" 1204
